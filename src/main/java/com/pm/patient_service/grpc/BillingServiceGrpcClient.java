@@ -21,5 +21,7 @@ public class BillingServiceGrpcClient {
 
         ManagedChannel channel = ManagedChannelBuilder.forAddress(serverAddress, serverPort).usePlaintext().build();
 
+        this.blockingStub = BillingServiceGrpc.newBlockingStub(channel);
+
     }
 }
